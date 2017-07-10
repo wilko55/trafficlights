@@ -1,0 +1,41 @@
+body {
+  font-family: sans-serif;
+}
+.traffic-light-container {
+  width: 12em;
+  margin: 2em;
+  text-align: center;
+}
+.traffic-light {
+  height: 20em;
+  background-color: #000000;
+  padding: 1em;
+  margin: .3em 0em;
+}
+.light {
+  height: 7.5em;
+  width: 7.5em;
+  border: solid #000000 1em;
+  border-radius: 90px;
+  margin: 0em auto 1em auto;
+}
+.green {
+  background-color: #83cc97;
+}
+.green-on {
+  background-color: #16e64f;
+  border: solid #0dde2f 1em;
+}
+.red {
+  background-color: #bd655c;
+}
+.red-on {
+  background-color: #ed230e;
+  border: solid #ff0000 1em;
+}
+.blink {
+  animation: blink 2s linear infinite;
+}
+@keyframes blink {
+  50% { opacity: .5; }
+}
