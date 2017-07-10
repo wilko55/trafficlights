@@ -38,8 +38,6 @@ function TrafficLight(serviceData) {
         count += 1;
       }
     })
-    // check whether > 3 statuses within the last 2 minutes are not 200
-    // before there are < 3 statuses, the light shown will be based the latest status check
     if (this.history.length > 3) {
       count < 3 ? this.toggleLight('green', 'red') : this.toggleLight('red', 'green');
     } else {

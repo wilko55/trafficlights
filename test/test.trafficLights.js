@@ -79,7 +79,7 @@ describe('The trafficLight function', () => {
       assert.isFunction(trafficLight.updateLights);
     });
 
-    describe('calls updateLights with the correct params', () => {
+    describe('calls toggleLight with the correct params', () => {
       let stub;
 
       beforeEach(() => {
