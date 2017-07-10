@@ -6,7 +6,7 @@
     "start": "node app.js",
     "sass": "./node_modules/node-sass/bin/node-sass ./assets/styles.scss ./public/css/styles.css",
     "postinstall": "npm run sass",
-    "test": "mocha --recursive -R spec ./test/"
+    "test": "mocha --recursive -R spec ./test/unit/"
   },
   "author": "Andy Wilkinson",
   "license": "MIT",

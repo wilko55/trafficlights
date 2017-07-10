@@ -14,4 +14,8 @@ There are two endpoints, `/status` and `/traffic`
 ## Adding configurations
 Consists of two parts:
 1. Adding an extra config category in the database and assigning services to that category
-2. Adding that config name to the approved validConfigurations array in /traffic route within the main app.js file
+2. Adding that config name to the approved validConfigurations array in /lib/validation.js
+
+## Testing
+For client side, go to `/test/testRunner.html`.
+For server side, run `npm run test` on the command line.

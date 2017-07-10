@@ -13,6 +13,7 @@ const connection = mysql.createConnection({
   database: process.env.DB || 'statuscheckerDB',
   port: process.env.DBPORT || 3306
 });
+const validation = require('./lib/validation.js');
 connection.connect();
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -27,15 +28,8 @@ app.get('/status', function(req, res, next) {
   req.query.code || typeof req.query.code === Number ? res.sendStatus(req.query.code) : res.sendStatus(500);
 });
 
-app.get('/traffic', function(req,res, next) {
-  let validConfigurations = [
-    'allServices',
-    'critical'
-  ];
-  if (!validConfigurations.includes(req.query.config)) {
-    throw 'Invalid configuration';
-  }
-
+app.get('/traffic', function(req, res, next) {
+  validation.checkConfig(req.query.config);
   connection.query('SELECT service, url, frequencyInSeconds from services where ' + req.query.config + ' = 1', function (err, rows, fields) {
     if (err) throw err;
     res.render('traffic', {data: JSON.stringify(rows)});
